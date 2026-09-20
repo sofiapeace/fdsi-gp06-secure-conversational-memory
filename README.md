@@ -18,7 +18,7 @@ verificable.
 
 | Hito | Contenido | Estado |
 |---|---|---|
-| 1 | Propuesta estructurada | Entregada — `docs/hito1/` |
+| 1 | Propuesta estructurada | Entregada 05/09 · **corregida 19/09** — `docs/hito1/propuesta-corregida.md` |
 | 2 | Laboratorio **Unsecure**, T01 y T02 con evidencia, metricas M1 y M2 de linea base | **Listo** — resultados en `docs/hito2/informe-avance.md` |
 | 3 | Controles C1–C6, T03–T06, comparativa Secure vs Unsecure, paper IEEE | Pendiente |
 
