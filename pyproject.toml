@@ -1,0 +1,27 @@
+[project]
+name = "memlab"
+version = "0.2.0"
+description = "FDSI-GP-06 - Laboratorio de seguridad de la memoria conversacional en asistentes LLM"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pydantic>=2.7",
+    "chromadb>=0.5.0",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "freezegun>=1.5"]
+
+[project.scripts]
+memlab = "memlab.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/memlab"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
