@@ -1,0 +1,40 @@
+# Dos perfiles sobre UNA sola base de codigo (propuesta, seccion 8).
+# El diff entre los dos servicios es la variable MEMLAB_PROFILE y nada mas:
+# si hubiera que cambiar codigo o imagen, la comparacion entre arquitecturas
+# dejaria de ser limpia.
+#
+#   docker compose --profile unsecure run --rm lab-unsecure make t01
+#
+# Ollama corre en el host (mas rapido en Apple Silicon, que es donde se ejecutan
+# las corridas oficiales). host.docker.internal apunta al Ollama del host.
+
+services:
+  lab-unsecure:
+    profiles: ["unsecure"]
+    build: .
+    environment:
+      MEMLAB_PROFILE: unsecure
+      MEMLAB_OLLAMA_HOST: http://host.docker.internal:11434
+      MEMLAB_MODEL: llama3.1:8b-instruct-q4_K_M
+      MEMLAB_SEED: "20260919"
+      MEMLAB_TEMPERATURE: "0"
+      MEMLAB_NUM_PREDICT: "256"
+    volumes:
+      - ./evidence:/app/evidence
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  lab-secure:
+    profiles: ["secure"]
+    build: .
+    environment:
+      MEMLAB_PROFILE: secure      # controles C1-C6: Hito 3
+      MEMLAB_OLLAMA_HOST: http://host.docker.internal:11434
+      MEMLAB_MODEL: llama3.1:8b-instruct-q4_K_M
+      MEMLAB_SEED: "20260919"
+      MEMLAB_TEMPERATURE: "0"
+      MEMLAB_NUM_PREDICT: "256"
+    volumes:
+      - ./evidence:/app/evidence
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

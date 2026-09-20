@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+*.egg-info/
+
+# Estado del laboratorio: SQLite y el indice de Chroma. Se regenera corriendo
+# el experimento de nuevo, asi que no se versiona. Cubre tanto ./data como el
+# data/ que cada corrida deja dentro de evidence/runs/.
+data/
+
+# Lo que SI se versiona de cada corrida (compromiso de la propuesta, seccion 8):
+#   evidence/runs/<corrida>/manifest.json   git_sha, semilla, digest del modelo
+#   evidence/runs/<corrida>/audit.jsonl     prompts, recuperacion, respuestas
+#   evidence/runs/<corrida>/results.json    veredicto por sesion o sondeo
+#   evidence/metrics/<corrida>.json         M1 y M2 con intervalos
