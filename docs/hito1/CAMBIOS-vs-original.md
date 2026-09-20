@@ -103,8 +103,9 @@ pésima—. El ataque "funcionaría" por un artefacto del laboratorio vacío. Co
 canal de perfil, T01 explota el perfil fijado y T02 la búsqueda sin filtro: cada
 prueba aísla una debilidad distinta.
 
-**Acción pendiente:** actualizar los dos diagramas en Draw.io y versionar los
-`.drawio`, a lo que la propuesta se compromete en §9.
+**Hecho.** Las dos figuras se rehicieron en `docs/diagramas/`, con fuente
+`.drawio` editable y exportación `.svg` lista para pegar en el documento. Las
+originales quedan en `docs/diagramas/originales/` solo como referencia.
 
 ---
 
@@ -280,12 +281,43 @@ cómo se manejó, no.
 
 ---
 
+## 17 · Referencias verificadas contra la fuente
+
+**Dónde:** §11.
+
+La §12 afirma que *"las referencias se comprobaron contra sus fuentes
+originales"*. Esa frase es una declaración de integridad académica, y dos
+referencias tenían datos que no se habían comprobado. Se verificaron el
+19/09/2026.
+
+**Referencia 2 — dos correcciones.** La fecha (09/12/2025) y ASI06 como *Memory &
+Context Poisoning* se confirman en `genai.owasp.org`. Pero el título oficial lleva
+el año —*OWASP Top 10 for Agentic Applications **2026***— y **la mención al
+"London Agentic Security Summit" se eliminó**: no aparece en ninguna página
+oficial del proyecto como sede de esta publicación. "London" sí figura como una
+de las cuatro sedes del *kick-off* de agosto de 2025, que es un evento distinto.
+
+**Referencia 4 — verificada por completo** y además refuerza el trabajo.
+Identificador, título, los seis autores, fecha y las dos defensas coinciden. Y su
+resultado central —*"realistic conditions with pre-existing legitimate memories
+dramatically reduce attack effectiveness"*— **respalda de forma independiente la
+decisión de sembrar memoria legítima de fondo** (cambio 5). Evalúan sobre
+Llama-3.1-8B-Instruct, el mismo modelo del laboratorio. Vale la pena citarlo en
+el informe justo donde se justifica el ruido de fondo.
+
+**Referencia 6** ya se había verificado contra `atlas.mitre.org`.
+
+> **Por qué importa.** Los modelos de lenguaje producen citas plausibles pero
+> falsas: identificadores con el formato correcto que no corresponden a ningún
+> trabajo, fechas de eventos que suenan bien. En un documento que declara haber
+> verificado sus fuentes, y en una materia de seguridad, eso pesa.
+
+---
+
 ## Lo que sigue pendiente del equipo
 
-1. **Actualizar las Figuras 1 y 2** con el segundo canal de recuperación, y
-   versionar los `.drawio`.
-2. **Verificar dos referencias** contra sus fuentes: la fecha del London Agentic
-   Security Summit (referencia 2) y el identificador `arXiv:2601.05504`
-   (referencia 4).
-3. **Portar este documento a la plantilla oficial** de la asignatura. Aquí está el
+1. **Portar este documento a la plantilla oficial** de la asignatura. Aquí está el
    texto; el formato con encabezados y pies institucionales lo pone la plantilla.
+2. **Revisar la tabla de estado del cronograma** al cierre del documento: declara
+   el retraso del frente de ingeniería. Es una decisión del equipo, no una
+   corrección técnica.

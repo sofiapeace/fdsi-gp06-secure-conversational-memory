@@ -1,0 +1,129 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="Figura 2 - Arquitectura Secure" id="Figura 2 - Arquitectura Secure">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1640" pageHeight="1240" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1" value="Figura 2. Arquitectura Secure" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1B5E20;fontSize=20;align=left;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="La misma solucion. En verde, los controles C1-C6 y el nuevo limite de confianza, que deja por fuera el contenido recuperado de la memoria." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#6B7A90;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="52" width="1200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="Zona de confianza del sistema — el contenido recuperado de memoria NO forma parte de ella" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=8 6;strokeColor=#6B7A90;strokeWidth=2;fontColor=#6B7A90;fontSize=15;verticalAlign=top;align=center;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="1300" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="&lt;b&gt;Usuario A&lt;/b&gt;&lt;br&gt;tenant T1 · user A" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#DAE3F3;strokeColor=#2F5597;strokeWidth=2;fontColor=#1F3864;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="175" width="210" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="&lt;b&gt;Usuario B&lt;/b&gt;&lt;br&gt;tenant T1 · user B" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FBE4E4;strokeColor=#C00000;strokeWidth=2;fontColor=#B00020;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="275" width="210" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="&lt;b&gt;C1 · Identidad&lt;/b&gt;&lt;br&gt;&lt;br&gt;tenant_id + user_id +&lt;br&gt;session_id firmados (JWT);&lt;br&gt;toda escritura y lectura los exigen" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="385" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="&lt;b&gt;Interfaz de chat&lt;/b&gt;&lt;br&gt;(Streamlit)&lt;br&gt;&lt;br&gt;propaga el token&lt;br&gt;con los claims" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="&lt;b&gt;Orquestador (FastAPI)&lt;/b&gt;&lt;br&gt;&lt;b&gt;C2 · Context Builder&lt;/b&gt;&lt;br&gt;&lt;br&gt;la memoria se inyecta como&lt;br&gt;DATOS delimitados dentro de&lt;br&gt;&amp;lt;memoria_no_ejecutable&amp;gt;&lt;br&gt;nunca en el rol system&lt;br&gt;&lt;br&gt;+ spotlighting y regla explicita&lt;br&gt;de no obedecer lo recuperado" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="150" width="300" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="&lt;b&gt;LLM local&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ollama ·&lt;br&gt;Llama 3.1 8B" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="950" y="205" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="&lt;b&gt;Herramientas / APIs&lt;/b&gt;&lt;br&gt;&lt;b&gt;C6 · Autorizacion por origen&lt;/b&gt;&lt;br&gt;&lt;br&gt;toda accion cuya justificacion&lt;br&gt;provenga de memoria exige&lt;br&gt;confirmacion explicita del usuario&lt;br&gt;&lt;br&gt;buscar_doc() · enviar_correo()" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="165" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="&lt;b&gt;C3 · Write-Gate&lt;/b&gt;&lt;br&gt;&lt;br&gt;clasificador en dos etapas&lt;br&gt;(reglas + LLM juez) que bloquea&lt;br&gt;imperativos, secretos y PII&lt;br&gt;&lt;br&gt;solo pasan hechos tipados&lt;br&gt;(esquema Pydantic)" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="230" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="&lt;b&gt;Memory Manager&lt;/b&gt;&lt;br&gt;&lt;b&gt;C4 · Procedencia&lt;/b&gt;&lt;br&gt;&lt;br&gt;origin_session, autor,&lt;br&gt;timestamp y HMAC por&lt;br&gt;registro; sin firma → descarte" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="620" y="545" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="&lt;b&gt;Almacen de memoria&lt;/b&gt;&lt;br&gt;&lt;b&gt;C1 · Aislamiento&lt;/b&gt;&lt;br&gt;&lt;br&gt;ChromaDB: espacio de nombres por&lt;br&gt;(tenant_id, user_id)&lt;br&gt;+ filtro de metadatos obligatorio&lt;br&gt;&lt;br&gt;SQLite cifrado con clave por tenant&lt;br&gt;C5 · TTL por categoria de dato" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="880" y="520" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="&lt;b&gt;C5 · Ciclo de vida&lt;/b&gt;&lt;br&gt;&lt;br&gt;expiracion perezosa en la&lt;br&gt;lectura + job de purga&lt;br&gt;&lt;br&gt;borrado verificable en las tres&lt;br&gt;capas: fila, embedding y cache&lt;br&gt;&lt;br&gt;emite prueba de borrado (HMAC)" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="520" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="&lt;b&gt;C6 · Observabilidad y auditoria&lt;/b&gt;&lt;br&gt;&lt;br&gt;registro append-only de cada escritura y cada recuperacion de memoria (quien, cuando, que namespace, veredicto del write-gate),&lt;br&gt;trazas OpenTelemetry por turno y alerta ante tasa anomala de escrituras o de bloqueos" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=13;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="360" y="745" width="1100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n4" target="n7">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n5" target="n7">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=11;dashed=1;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.9;entryDx=0;entryDy=0;" edge="1" parent="1" source="n6" target="n7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n7" target="n8">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n8" target="n9">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F3864;strokeWidth=2;fontColor=#1F3864;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n9" target="n10">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" value="candidato a memoria" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="n8" target="n11">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n11" target="n12">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n12" target="n13">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n13" target="n14">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" value="C1 filtra LOS DOS canales — perfil fijado y similitud —&#10;y solo entrega lo del namespace del usuario y no caducado" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1B5E20;strokeWidth=2;fontColor=#1B5E20;fontSize=11;dashed=0;endArrow=blockThin;endFill=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="n13" target="n8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1055" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n27" value="Que cambia respecto de la arquitectura Unsecure" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1B5E20;fontSize=16;align=left;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="855" width="800" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n28" value="&lt;b&gt;&lt;font color='#1B5E20'&gt;C1 Aislamiento.&lt;/font&gt;&lt;/b&gt; Particion por (tenant_id, user_id) con filtro obligatorio &lt;b&gt;en los dos canales de recuperacion&lt;/b&gt; y cifrado por tenant → suprime el canal de fuga entre conversaciones y usuarios. Cubre ②." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1F3864;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="890" width="1560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="n29" value="&lt;b&gt;&lt;font color='#1B5E20'&gt;C2 Segregacion datos/instrucciones.&lt;/font&gt;&lt;/b&gt; La memoria pierde la autoridad del rol system y pasa a leerse como dato inerte → neutraliza la instruccion latente. Cubre ③." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1F3864;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="940" width="1560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="n30" value="&lt;b&gt;&lt;font color='#1B5E20'&gt;C3 Write-Gate + tipado.&lt;/font&gt;&lt;/b&gt; Impide que una instruccion llegue siquiera a persistirse; el esquema tipado elimina el texto libre como vehiculo. Cubre ①." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1F3864;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="990" width="1560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="n31" value="&lt;b&gt;&lt;font color='#1B5E20'&gt;C4 Procedencia firmada.&lt;/font&gt;&lt;/b&gt; Cada registro lleva autor, sesion de origen y HMAC; lo no firmado o alterado se descarta en la lectura. Cubre ① y ④." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1F3864;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1040" width="1560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="n32" value="&lt;b&gt;&lt;font color='#1B5E20'&gt;C5 Ciclo de vida.&lt;/font&gt;&lt;/b&gt; TTL por categoria y borrado verificable en las tres capas acotan la ventana de persistencia y hacen real el &quot;olvidalo&quot;. Cubre ④." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1F3864;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1090" width="1560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="n33" value="&lt;b&gt;&lt;font color='#1B5E20'&gt;C6 Autorizacion por origen + auditoria.&lt;/font&gt;&lt;/b&gt; Contiene el impacto sobre las herramientas y aporta la evidencia reproducible de cada prueba. Cubre ⑤." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1F3864;fontSize=13;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1140" width="1560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="n34" value="Criterio de aprobacion de C1: M2a = 0 (fuga de recuperacion). No basta con M2b = 0: que el modelo no repita un dato ajeno que el indice ya le entrego no es un control, es suerte." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1B5E20;fontSize=14;align=left;verticalAlign=top;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1196" width="1560" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

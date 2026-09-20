@@ -683,9 +683,10 @@ frente a la línea base Unsecure.
    2025.* Riesgos LLM01 sobre inyección de prompts, LLM02 sobre exposición de
    información sensible y LLM08 sobre debilidades en vectores y embeddings.
    Disponible en `genai.owasp.org`
-2. **OWASP GenAI Security Project.** *OWASP Top 10 for Agentic Applications*,
-   riesgo ASI06 sobre envenenamiento de memoria y contexto. Trata la corrupción
-   de sistemas de memoria, embeddings y bases RAG para manipular decisiones a
+2. **OWASP GenAI Security Project** (2025). *OWASP Top 10 for Agentic
+   Applications 2026*, riesgo **ASI06 · Memory & Context Poisoning**. Publicado
+   el 9 de diciembre de 2025 en `genai.owasp.org`. Trata la corrupción de
+   sistemas de memoria, embeddings y bases RAG para manipular decisiones a
    través de sesiones.
 3. **Dong, S.; Xu, S.; He, P.; Li, Y.; Tang, J.; Liu, T.; Liu, H.; Xiang, Z.**
    (2025). *Memory Injection Attacks on LLM Agents via Query-Only Interaction*
@@ -694,7 +695,11 @@ frente a la línea base Unsecure.
    Mishra, S.** (2026). *Memory Poisoning Attack and Defense on Memory Based
    LLM-Agents.* arXiv:2601.05504. Propone y calibra dos defensas, moderación
    basada en confianza y saneamiento de memoria con filtrado temporal, que
-   aplican directamente a los controles C3 y C5.
+   aplican directamente a los controles C3 y C5. **Respalda de forma
+   independiente la decisión de sembrar memoria legítima de fondo** en T01 y T02:
+   su resultado central es que *"realistic conditions with pre-existing
+   legitimate memories dramatically reduce attack effectiveness"*. Evalúan, entre
+   otros, sobre Llama-3.1-8B-Instruct, el mismo modelo de este laboratorio.
 5. **NIST** (2025). *Adversarial Machine Learning: A Taxonomy and Terminology of
    Attacks and Mitigations*, NIST AI 100-2 E2025.
 6. **MITRE ATLAS.** *Adversarial Threat Landscape for Artificial-Intelligence
@@ -705,10 +710,18 @@ frente a la línea base Unsecure.
 7. **Congreso de la República de Colombia.** *Ley 1581 de 2012*, Régimen General
    de Protección de Datos Personales. Fundamento normativo del control C5.
 
-> **Pendiente de verificación del equipo.** Confirmar contra la fuente original
-> la fecha de presentación de la referencia 2 (London Agentic Security Summit,
-> 09/12/2025) y el identificador de la referencia 4 (`arXiv:2601.05504`). La
-> referencia 6 se verificó el 19/09/2026.
+> **Verificación de referencias, 19/09/2026.** Las referencias 2, 4 y 6 se
+> comprobaron contra sus fuentes originales.
+>
+> - **Ref. 2.** La fecha (09/12/2025) y el riesgo ASI06 como *Memory & Context
+>   Poisoning* se confirman en `genai.owasp.org`. Dos correcciones respecto de la
+>   versión original: el título oficial lleva el año (*…for Agentic Applications
+>   **2026***), y **se eliminó la mención al "London Agentic Security Summit"**,
+>   que no aparece en ninguna página oficial del proyecto como sede de esta
+>   publicación.
+> - **Ref. 4.** Verificada por completo: identificador, título, los seis autores,
+>   fecha (9 de enero de 2026, v2 el 12 de enero) y las dos defensas propuestas.
+> - **Ref. 6.** Técnicas y mitigaciones verificadas contra `atlas.mitre.org`.
 
 ---
 
@@ -782,8 +795,9 @@ de T01 a T06. Del 21 al 26, análisis comparativo, paper IEEE, presentación y d
 | Métricas M1 y M2 de línea base | **Listo** |
 | Sección de controles C1–C6 | **Listo** — sección 6 de este documento |
 | Mapeo a MITRE ATLAS | **Listo** — `docs/hito2/mapeo-mitre-atlas.md` |
-| Figuras 1 y 2 actualizadas con el segundo canal | **Pendiente** |
-| Fuentes `.drawio` de las figuras versionados | **Pendiente** |
+| Figuras 1 y 2 actualizadas con el segundo canal | **Listo** — `docs/diagramas/` |
+| Fuentes `.drawio` y exportaciones `.svg` versionados | **Listo** |
+| Referencias 2, 4 y 6 verificadas contra la fuente | **Listo** |
 | Presentación y video demo | **Pendiente** — guion listo |
 | Controles C1–C6 implementados y T03–T06 | **Hito 3** |
 
