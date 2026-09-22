@@ -99,7 +99,7 @@ línea base que midamos en la arquitectura Unsecure, y quedar en un valor absolu
 menor o igual a 5 % en la Secure. La línea base la reportamos como resultado
 observado y no la fijamos de antemano.
 
-> *Línea base observada en el Hito 2 (19/09/2026): **TPI = 100 %**, 20 de 20
+> *Línea base observada en el Hito 2 (22/09/2026): **TPI = 100 %**, 20 de 20
 > sesiones nuevas, IC 95 % [83,89 – 100]. Con esa línea base, el criterio
 > relativo del 90 % exige TPI ≤ 10 % y el criterio absoluto del 5 % es el que
 > manda.*
@@ -132,11 +132,11 @@ renunciar a la funcionalidad.
 
 > **Corregido.** La versión original medía los 300 ms extremo a extremo, y así la
 > hipótesis es inevaluable. En la línea base del Hito 2, la sola diferencia entre
-> p50 y p95 del turno completo fue de **1 802 ms en T01** y **1 220 ms en T02**,
-> entre cuatro y seis veces el presupuesto entero de la hipótesis, **sin que
+> p50 y p95 del turno completo fue de **1 384 ms en T01** y **1 248 ms en T02**,
+> entre cuatro y cinco veces el presupuesto entero de la hipótesis, **sin que
 > existiera todavía ningún control**. Cualquier sobrecosto de C1–C6 quedaría
 > enterrado en la varianza de generación del modelo. La ruta de memoria, en
-> cambio, es estable y pequeña: 66 ms p50 y 108 ms p95, el 2,1 % del turno. Sobre
+> cambio, es estable y pequeña: 67 ms p50 y 100 ms p95, el 1,7 % del turno. Sobre
 > `L_mem` el presupuesto de 300 ms es exigente y medible. La latencia extremo a
 > extremo (`L_e2e`) se sigue reportando como contexto.
 
