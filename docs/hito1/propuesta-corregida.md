@@ -10,6 +10,11 @@
 | **Repositorio** | https://github.com/sofiapeace/fdsi-gp06-secure-conversational-memory |
 | **Versión** | 2 · corregida el 19/09/2026 (original: 05/09/2026) |
 
+> **Entregable oficial:** `FDSIGP06_Propuesta_Estructurada_v2.pdf` (y su fuente editable
+> `FDSIGP06_Propuesta_Estructurada_v2.docx`), en esta misma carpeta, con la plantilla del
+> original. Este Markdown es el borrador de trabajo y conserva las justificaciones de cada
+> cambio, que el documento oficial resume.
+>
 > **Sobre esta versión.** Corrige la propuesta entregada el 05/09/2026. El cambio
 > obligatorio es la **sección 6**, que define los controles C1–C6: la versión
 > original los citaba en la prueba T03, en la referencia 4 y en la cadena de
@@ -707,21 +712,26 @@ frente a la línea base Unsecure.
    subtécnicas .000 / .001, AML.T0057, AML.T0070, AML.T0071, **AML.T0080 y
    subtécnica .000**, AML.T0085.000, AML.T0086. Mitigaciones AML.M0019, M0020,
    M0024, M0025, M0027, M0029, M0030, **M0031**, M0032, M0033.
-7. **Congreso de la República de Colombia.** *Ley 1581 de 2012*, Régimen General
+7. **Congreso de la República de Colombia.** *Ley Estatutaria 1581 de 2012*, del 17 de octubre, Régimen General
    de Protección de Datos Personales. Fundamento normativo del control C5.
 
-> **Verificación de referencias, 19/09/2026.** Las referencias 2, 4 y 6 se
-> comprobaron contra sus fuentes originales.
+> **Verificación de referencias.** Las siete referencias se comprobaron contra sus
+> fuentes originales: la 2, la 4 y la 6 el 19/09/2026, y la 1, la 3, la 5 y la 7 el
+> 21/09/2026.
 >
+> - **Ref. 1.** Los nombres exactos de LLM01, LLM02 y LLM08 en `genai.owasp.org`.
 > - **Ref. 2.** La fecha (09/12/2025) y el riesgo ASI06 como *Memory & Context
 >   Poisoning* se confirman en `genai.owasp.org`. Dos correcciones respecto de la
 >   versión original: el título oficial lleva el año (*…for Agentic Applications
 >   **2026***), y **se eliminó la mención al "London Agentic Security Summit"**,
 >   que no aparece en ninguna página oficial del proyecto como sede de esta
 >   publicación.
+> - **Ref. 3.** Identificador, título y los ocho autores en arXiv (marzo de 2025).
 > - **Ref. 4.** Verificada por completo: identificador, título, los seis autores,
 >   fecha (9 de enero de 2026, v2 el 12 de enero) y las dos defensas propuestas.
+> - **Ref. 5.** NIST AI 100-2 E2025, publicada en marzo de 2025, en `csrc.nist.gov`.
 > - **Ref. 6.** Técnicas y mitigaciones verificadas contra `atlas.mitre.org`.
+> - **Ref. 7.** Es la *Ley Estatutaria* 1581 de 2012, del 17 de octubre (Función Pública).
 
 ---
 

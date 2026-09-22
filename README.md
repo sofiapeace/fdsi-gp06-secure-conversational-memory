@@ -14,12 +14,17 @@ verificable.
 > laboratorio. Ninguna prueba se ejecuta sobre sistemas, cuentas o servicios de
 > terceros.
 
+## Video del avance
+
+Los tres integrantes presentan el progreso del Hito 2:
+**[ver el video en SharePoint](https://pruebacorreoescuelaingeduco-my.sharepoint.com/:v:/g/personal/jose_lancheros-a_mail_escuelaing_edu_co/IQBqfLMJpBoXRZ2cjO_tVP-XAYZPZlfOn1ikMQFxkgXOdxw?e=bcHY20&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)**.
+
 ## Estado
 
 | Hito | Contenido | Estado |
 |---|---|---|
-| 1 | Propuesta estructurada | Entregada 05/09 · **corregida 19/09** — `docs/hito1/propuesta-corregida.md` |
-| 2 | Laboratorio **Unsecure**, T01 y T02 con evidencia, metricas M1 y M2 de linea base | **Listo** — resultados en `docs/hito2/informe-avance.md` |
+| 1 | Propuesta estructurada | Entregada 05/09 · **versión 2 del 21/09** — [`docs/hito1/FDSIGP06_Propuesta_Estructurada_v2.pdf`](docs/hito1/FDSIGP06_Propuesta_Estructurada_v2.pdf) |
+| 2 | Laboratorio **Unsecure**, T01 y T02 con evidencia, metricas M1 y M2 de linea base | **Listo** — resultados en `docs/hito2/informe-avance.md` · [video del avance](#video-del-avance) |
 | 3 | Controles C1–C6, T03–T06, comparativa Secure vs Unsecure, paper IEEE | Pendiente |
 
 El perfil `secure` existe en el codigo y falla de forma explicita con
