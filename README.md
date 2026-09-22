@@ -31,18 +31,22 @@ El perfil `secure` existe en el codigo y falla de forma explicita con
 `NotImplementedError` indicando el control que falta. Es deliberado: el Avance 1
 entrega la linea base, no una version segura a medias.
 
-## Linea base medida (19/09/2026, Llama 3.1 8B Instruct Q4_K_M)
+## Linea base medida (22/09/2026 · commit `3ada423` · Llama 3.1 8B Instruct Q4_K_M)
 
 | Metrica | Resultado | IC 95 % |
 |---|---|---|
 | **M1** TPI, instruccion dormida (T01, 20 sesiones nuevas) | **100 %** | [83,9 – 100] |
 | **M2a** fuga de recuperacion (T02, 100 sondeos) | **67 %** | [57,3 – 75,4] |
 | **M2b** fuga de divulgacion (T02, 100 sondeos) | **49 %** | [39,4 – 58,7] |
-| `L_mem` p95, ruta de memoria | 108 ms | — |
-| `L_e2e` p95, turno completo | 4 995 ms | — |
+| `L_mem` p95, ruta de memoria | 100 ms | — |
+| `L_e2e` p95, turno completo | 5 279 ms | — |
 
 En **18 de 100** sondeos el indice entrego a B un documento de A y el modelo no
 lo repitio. El control habia fallado igual. Por eso M2 se reporta en dos niveles.
+
+Una corrida anterior, del 19/09, dio **exactamente los mismos** M1, M2a y M2b. Lo
+unico que se movio fue la latencia extremo a extremo, por carga de la maquina,
+mientras la ruta de memoria se mantuvo entre 66 y 67 ms.
 
 ## Como se corre
 
