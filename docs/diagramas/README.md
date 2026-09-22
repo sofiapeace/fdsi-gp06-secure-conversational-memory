@@ -62,9 +62,13 @@ También se precisó que la prueba de borrado de C5 usa **HMAC**, no un hash pla
 
 ---
 
-## Nota sobre las tildes
+## Uso en el documento del Hito 1
 
-Los diagramas están sin tildes. No es descuido: el texto vive dentro de atributos
-XML del `.drawio` y así se evitan problemas de codificación al abrirlos en
-distintas versiones de Draw.io y al exportar. Si el equipo las prefiere, se
-pueden agregar desde el editor sin romper nada.
+El PDF y el Word de la propuesta (`docs/hito1/FDSIGP06_Propuesta_Estructurada_v2.*`)
+usan estas mismas figuras, recortadas sin el título interno ni la leyenda: en el
+documento, la figura lleva su pie de figura y la leyenda de debilidades va como
+texto, para que se pueda leer impresa.
+
+La letra de las cajas es de 17 px y la de las etiquetas de 15 px. Con menos,
+al ajustar el diagrama al ancho de una hoja A4 el texto queda en unos 5 pt y no
+se lee impreso. Si se edita una figura, conviene mantener esos tamaños.
