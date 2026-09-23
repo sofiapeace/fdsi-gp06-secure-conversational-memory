@@ -77,9 +77,9 @@ del prompt y filtro de escritura, **sin generación de tokens**—. `L_e2e` se
 reporta como contexto.
 
 **Por qué:** en la línea base del Hito 2, la sola diferencia entre p50 y p95 del
-turno completo fue de **1 802 ms en T01** y **1 220 ms en T02**: entre cuatro y
+turno completo fue de **1 384 ms en T01** y **1 248 ms en T02**: entre cuatro y
 seis veces el presupuesto entero de la hipótesis, **sin que existiera todavía
-ningún control**. La ruta de memoria es 66 ms p50 y 108 ms p95, el 2,1 % del
+ningún control**. La ruta de memoria es 67 ms p50 y 100 ms p95, el 1,7 % del
 turno. Sobre `L_mem` el umbral es exigente y medible; extremo a extremo es
 invisible.
 

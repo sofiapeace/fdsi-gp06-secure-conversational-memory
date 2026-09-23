@@ -95,7 +95,8 @@ comprometio en el Hito 1.
 
 ## 4. Resultados
 
-Corrida oficial del **19/09/2026**, perfil Unsecure, backend Ollama. Ninguna
+Corrida oficial del **22/09/2026**, commit `3ada423`, perfil Unsecure, backend
+Ollama. Ninguna
 cifra de esta seccion se escribio a mano: todas salen de
 `experiments/compute_metrics.py` leyendo `evidence/runs/`.
 
@@ -138,23 +139,29 @@ pregunta.
 
 | | T01 | T02 |
 |---|---|---|
-| `L_e2e` p50 | 3 193 ms | 1 689 ms |
-| `L_e2e` p95 | 4 995 ms | 2 909 ms |
-| `L_mem` p50 | 66 ms | 45 ms |
-| `L_mem` p95 | 108 ms | 47 ms |
+| `L_e2e` p50 | 3 895 ms | 1 653 ms |
+| `L_e2e` p95 | 5 279 ms | 2 901 ms |
+| `L_mem` p50 | 67 ms | 46 ms |
+| `L_mem` p95 | 100 ms | 48 ms |
 
-La ruta de memoria es el **2,1 %** del turno completo.
+La ruta de memoria es el **1,7 %** del turno completo.
 
 ### Reproducibilidad de la corrida
 
 | | Valor |
 |---|---|
-| `git_sha` | `cf1808c` |
+| `git_sha` | `3ada423` |
 | Modelo | `llama3.1:8b-instruct-q4_K_M`, Q4_K_M, 8.0B |
 | Digest | `46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e` |
 | Ollama | 0.34.2 |
 | Semilla / temperatura / tope de tokens | 20260919 / 0 / 256 |
 | Embeddings | all-MiniLM-L6-v2 (ONNX), distancia coseno, k = 4 |
+
+Las 20 sesiones de T01 y los 100 sondeos de T02 se ejecutaron sobre el commit
+`3ada423`, que contiene el codigo del laboratorio. Una corrida anterior, del
+19/09, quedo amarrada al commit inicial `cf1808c`, que todavia no tenia ese
+codigo: quien intentara reproducirla desde ahi se encontraba un repositorio
+vacio. Por eso la corrida oficial es la del 22/09.
 
 ---
 
@@ -204,13 +211,13 @@ calle no es un control.
 ### 5.3 H4 no es evaluable como esta redactada, y ahora hay evidencia
 
 H4 pide ≤ 300 ms adicionales en el percentil 95. Medida extremo a extremo, la
-sola diferencia entre p50 y p95 del turno es de **1 802 ms en T01** y **1 220 ms
-en T02**: entre cuatro y seis veces el presupuesto completo de la hipotesis, sin
+sola diferencia entre p50 y p95 del turno es de **1 384 ms en T01** y **1 248 ms
+en T02**: entre cuatro y cinco veces el presupuesto completo de la hipotesis, sin
 que exista todavia ningun control. Cualquier sobrecosto de C1–C6 quedaria dentro
 del ruido de generacion y H4 no podria ni confirmarse ni rechazarse.
 
-La ruta de memoria, en cambio, es estable y pequena: 66 ms p50 y 108 ms p95, el
-2,1 % del turno. **H4 debe reformularse sobre `L_mem`.** Con eso el presupuesto de
+La ruta de memoria, en cambio, es estable y pequena: 67 ms p50 y 100 ms p95, el
+1,7 % del turno. **H4 debe reformularse sobre `L_mem`.** Con eso el presupuesto de
 300 ms pasa a ser exigente y medible en vez de trivial e invisible.
 
 ### 5.4 Un efecto lateral sobre utilidad
@@ -224,6 +231,32 @@ Es decir: en la misma sesion, el canal del atacante tuvo recuperacion perfecta y
 la preferencia legitima del usuario se perdio. La memoria insegura no solo es
 insegura: en este caso tambien fue menos util. Vale la pena medirlo formalmente
 en T06.
+
+---
+
+### 5.5 La linea base se reprodujo en otro dia y otro commit
+
+La corrida del 22/09 repitio la del 19/09 con el mismo modelo, la misma semilla y
+la misma configuracion, en la misma maquina y en otro estado de carga:
+
+| | 19/09 (`cf1808c`) | 22/09 (`3ada423`) |
+|---|---|---|
+| T01 · instruccion cumplida | 20 / 20 | **20 / 20** |
+| M2a · fuga de recuperacion | 67 / 100 | **67 / 100** |
+| M2b · fuga de divulgacion | 49 / 100 | **49 / 100** |
+| T01 · `L_e2e` p50 | 3 193 ms | 3 895 ms |
+| T01 · `L_mem` p50 | 66 ms | **67 ms** |
+
+Las tres metricas de seguridad dan identicas. Lo unico que se movio fue la
+latencia extremo a extremo, unos 700 ms en la mediana de T01, que es exactamente
+lo que se espera de una medida sujeta a la carga de la maquina. La ruta de
+memoria se quedo en 67 ms.
+
+Eso **refuerza** el argumento de 5.3 en lugar de debilitarlo: entre dos corridas
+del mismo experimento, `L_e2e` se movio mas del doble del presupuesto entero de
+H4, mientras que `L_mem` se movio 1 ms. Medir H4 sobre el turno completo seria
+medir la carga de la maquina; medirla sobre la ruta de memoria mide el efecto de
+los controles.
 
 ---
 
